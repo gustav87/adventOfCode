@@ -6,8 +6,13 @@ const prios = createPrios("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 const rucksacks = data.split("\n");
 
-const dupes = getDupes(rucksacks);
-const sum = getSum(dupes, prios);
+// const dupes = getDupes(rucksacks);
+// const sum = getSum(dupes, prios);
+
+const sum = getDupes(rucksacks)
+              .map(dupe => prios[dupe])
+              .reduce((a, b) => a + b, 0);
+
 console.log(sum);
 
 function getDupes(rucksacks) {
@@ -35,6 +40,7 @@ function createPrios(letters) {
   return prios;
 }
 
+// Not used. We use .map instead.
 function getSum(dupes, prios) {
   let sum = 0;
   for (let dupe of dupes) {
