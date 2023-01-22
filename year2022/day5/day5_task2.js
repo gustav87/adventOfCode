@@ -16,9 +16,8 @@ const state = [
 ]
 
 const instructions = data.split("\n")
-  .map(line => line.match(/\d+/g))
+  .map(line => line.match(/\d+/g)) // Get numbers from a line. "move 2 from 2 to 8" -> ['2', '2', '8']
   .map(instructions => instructions.map(instruction => +instruction)); // Parse instructions to ints. ['2', '2', '8'] -> [2, 2, 8]
-//  .map(i => [+i[0], +i[1], +i[2]]); // Parse instructions to ints. ['2', '2', '8'] -> [2, 2, 8]
 
 instructions.forEach(i => executeInstruction(i)); // Manipulate stack
 
@@ -32,10 +31,9 @@ function executeInstruction(i) {
   const amount = i[0];
   const from = i[1] - 1;
   const to = i[2] - 1;
-  for (i = 0; i < amount; i++) {
-    const crate = state[from].pop();
-    state[to].push(crate);
-  }
+  const crates = state[from].splice(-amount);
+  state[to].push(crates);
+  state[to] = state[to].flat();
 }
 
 function readFile(filename) {
