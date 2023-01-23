@@ -19,14 +19,6 @@ function hasDuplicates(arr) {
   return arr.some((element, index) => arr.indexOf(element) !== index);
 }
 
-// Not used.
-function isFourDifferentChars(str) {
-  const charArr = str.split("");
-  // Filter out duplicates. When it finds a duplicate, the index of that duplicate will not equal the index of the first occurrence found by .indexOf().
-  result = charArr.filter((item, index) => charArr.indexOf(item) !== index);
-  return result.length == 0;
-}
-
 function readFile(filename) {
   try {
     const data = fs.readFileSync(filename, 'utf8');
