@@ -58,7 +58,7 @@ function isVisibleRight(tree, position, forest) {
 
 function isVisibleDown(tree, position, forest) {
   const lastRow = 98;
-  if (position.column == lastRow) return true;
+  if (position.row == lastRow) return true;
 
   const treesBelow = forest
     .map(row => row.filter((tree, columnIndex) => columnIndex == position.column))
