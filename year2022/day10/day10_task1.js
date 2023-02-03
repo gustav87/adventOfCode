@@ -15,11 +15,11 @@ const totalSignalStrength = data
   .map(line => {
     let signalStrength = 0;
     if (isCycleStop(cycle)) signalStrength = calculateSignalStrength(cycle, X);
-    cycle += 1;
+    cycle++;
 
     if (isInstruction(line)) {
       if (isCycleStop(cycle)) signalStrength = calculateSignalStrength(cycle, X);
-      cycle += 1;
+      cycle++;
       const num = line.split(" ")[1];
       X += modifyRegister(num);
     }
