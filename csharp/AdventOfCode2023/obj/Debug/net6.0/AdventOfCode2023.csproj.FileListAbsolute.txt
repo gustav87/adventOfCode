@@ -1,0 +1,15 @@
+/home/guan/Dropbox/programming/js/adventOfCode/csharp/AdventOfCode2023/bin/Debug/net6.0/AdventOfCode2023
+/home/guan/Dropbox/programming/js/adventOfCode/csharp/AdventOfCode2023/bin/Debug/net6.0/AdventOfCode2023.deps.json
+/home/guan/Dropbox/programming/js/adventOfCode/csharp/AdventOfCode2023/bin/Debug/net6.0/AdventOfCode2023.runtimeconfig.json
+/home/guan/Dropbox/programming/js/adventOfCode/csharp/AdventOfCode2023/bin/Debug/net6.0/AdventOfCode2023.dll
+/home/guan/Dropbox/programming/js/adventOfCode/csharp/AdventOfCode2023/bin/Debug/net6.0/AdventOfCode2023.pdb
+/home/guan/Dropbox/programming/js/adventOfCode/csharp/AdventOfCode2023/obj/Debug/net6.0/AdventOfCode2023.csproj.AssemblyReference.cache
+/home/guan/Dropbox/programming/js/adventOfCode/csharp/AdventOfCode2023/obj/Debug/net6.0/AdventOfCode2023.GeneratedMSBuildEditorConfig.editorconfig
+/home/guan/Dropbox/programming/js/adventOfCode/csharp/AdventOfCode2023/obj/Debug/net6.0/AdventOfCode2023.AssemblyInfoInputs.cache
+/home/guan/Dropbox/programming/js/adventOfCode/csharp/AdventOfCode2023/obj/Debug/net6.0/AdventOfCode2023.AssemblyInfo.cs
+/home/guan/Dropbox/programming/js/adventOfCode/csharp/AdventOfCode2023/obj/Debug/net6.0/AdventOfCode2023.csproj.CoreCompileInputs.cache
+/home/guan/Dropbox/programming/js/adventOfCode/csharp/AdventOfCode2023/obj/Debug/net6.0/AdventOfCode2023.dll
+/home/guan/Dropbox/programming/js/adventOfCode/csharp/AdventOfCode2023/obj/Debug/net6.0/refint/AdventOfCode2023.dll
+/home/guan/Dropbox/programming/js/adventOfCode/csharp/AdventOfCode2023/obj/Debug/net6.0/AdventOfCode2023.pdb
+/home/guan/Dropbox/programming/js/adventOfCode/csharp/AdventOfCode2023/obj/Debug/net6.0/AdventOfCode2023.genruntimeconfig.cache
+/home/guan/Dropbox/programming/js/adventOfCode/csharp/AdventOfCode2023/obj/Debug/net6.0/ref/AdventOfCode2023.dll

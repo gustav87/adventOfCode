@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+      {
+          "name": ".NET Core Launch (web)",
+          "type": "coreclr",
+          "request": "launch",
+          "preLaunchTask": "build",
+          "console": "integratedTerminal",
+          "program": "${workspaceFolder}/bin/Debug/net6.0/AdventOfCode2023.dll",
+          "args": [],
+          "cwd": "${workspaceFolder}",
+          "stopAtEntry": false,
+      }
+  ]
+}
