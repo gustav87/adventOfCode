@@ -1,2 +1,8 @@
+# Javascript
 node_modules
 .env
+
+# C sharp
+.bin
+.obj
+
