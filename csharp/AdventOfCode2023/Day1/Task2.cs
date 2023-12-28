@@ -1,4 +1,6 @@
 namespace AdventOfCode2023.Day1;
+
+using System.Text.RegularExpressions;
 using AdventOfCode2023;
 
 class Day1Task2
@@ -9,45 +11,55 @@ class Day1Task2
         int sum = 0;
         foreach (string line in content)
         {
-            sum += SumFirstAndLastDigit(line);
-            GetFirstDigit(line);
+            int d1 = GetDigitFromLine(line, false);
+            int d2 = GetDigitFromLine(line, true);
+            sum += SumDigits(d1, d2);
         }
+        Console.WriteLine(sum); // 53855
     }
 
-    static int GetFirstDigit(string line)
+    static int GetDigitFromLine(string line, bool last)
     {
-        line = "0abc123";
-        int indexOfFirstInt = line.IndexOfAny("0123456789".ToCharArray());
-        Console.WriteLine(indexOfFirstInt);
-        // line.IndexOf('.');
-        return 1;
-    }
-    static int SumFirstAndLastDigit(string line)
-    {
-        char firstDigit = '0';
-        char lastDigit = '0';
-        bool isFirstDigitSet = false;
-
-        foreach (char c in line)
+        Regex re = new(@"\d|zero|one|two|three|four|five|six|seven|eight|nine", last ? RegexOptions.RightToLeft : RegexOptions.None);
+        Match m = re.Match(line);
+        string result;
+        if (m.Success)
         {
-            if (char.IsNumber(c))
+            result = string.Format("RegEx found " + m.Value + " at position " + m.Index.ToString());
+        }
+        else
+        {
+            throw new Exception("You didn't enter a string containing a number!");
+        }
+        Console.WriteLine(result);
+        int digit = ParseStringToDigit(m.Value);
+
+        return digit;
+    }
+
+    static int ParseStringToDigit(string str)
+    {
+        if (str.All(char.IsDigit))
+        {
+            return int.Parse(str);
+        }
+        else
+        {
+            var digitStrings = Enum.GetValues(typeof(Digits));
+            foreach (Digits d in digitStrings)
             {
-                if (isFirstDigitSet)
+                if (d.ToString() == str)
                 {
-                    lastDigit = c;
-                }
-                else
-                {
-                    firstDigit = c;
-                    isFirstDigitSet = true;
+                    return (int) d;
                 }
             }
         }
-        if (lastDigit == '0')
-        {
-            lastDigit = firstDigit;
-        }
-        int.TryParse($"{firstDigit}{lastDigit}", out int bothDigits);
+        return 0;
+    }
+
+    static int SumDigits(int d1, int d2)
+    {
+        int.TryParse($"{d1}{d2}", out int bothDigits);
         return bothDigits;
     }
 
@@ -63,5 +75,12 @@ class Day1Task2
         seven = 7,
         eight = 8,
         nine = 9,
+    }
+
+    static int GetFirstDigitIndex(string line)
+    {
+        int indexOfFirstInt = line.IndexOfAny("0123456789".ToCharArray());
+        Console.WriteLine(indexOfFirstInt);
+        return indexOfFirstInt;
     }
 }
