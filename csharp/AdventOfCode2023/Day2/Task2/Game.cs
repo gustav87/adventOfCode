@@ -1,14 +1,14 @@
 using System.Text.RegularExpressions;
 
-namespace AdventOfCode2023.Day2;
+namespace AdventOfCode2023.Day2.Task2;
 
 class Game
 {
     public int Id { get; set; }
-    public readonly int MaxRed = 12;
-    public readonly int MaxGreen = 13;
-    public readonly int MaxBlue = 14;
-    public bool Valid { get; set; } = true;
+    public int MinRed = 0;
+    public int MinGreen = 0;
+    public int MinBlue = 0;
+    public int Power { get; set; }
     public List<Turn> Turns { get; set; } = new List<Turn>();
 
     public Game()
@@ -27,11 +27,20 @@ class Game
         {
             Turn turn = new(t);
             Turns.Add(turn);
-            if (turn.Red > MaxRed || turn.Green > MaxGreen || turn.Blue > MaxBlue)
+            if (turn.Red > MinRed)
             {
-                Valid = false;
+                MinRed = turn.Red;
+            }
+            if (turn.Green > MinGreen)
+            {
+                MinGreen = turn.Green;
+            }
+            if (turn.Blue > MinBlue)
+            {
+                MinBlue = turn.Blue;
             }
         }
+        Power = MinRed * MinGreen * MinBlue;
     }
 }
 

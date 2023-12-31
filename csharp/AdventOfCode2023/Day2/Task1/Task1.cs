@@ -1,4 +1,4 @@
-namespace AdventOfCode2023.Day2;
+namespace AdventOfCode2023.Day2.Task1;
 
 using AdventOfCode2023;
 
