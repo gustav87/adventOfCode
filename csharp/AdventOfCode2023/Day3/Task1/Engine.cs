@@ -100,35 +100,15 @@ class Line
     public static List<Part> GetPartsFromLine(string line)
     {
         List<Part> parts = new List<Part>();
-        int charsRemoved = 0;
-        while (line.Length > 0)
+        Match match = Regex.Match(line, @"\d+");
+        while (match.Success)
         {
-            Match match = Regex.Match(line, @"\d+");
-            if (match.Success) {
-                int charsToCut = match.Index + match.Value.Length;
-                int originalStartIndex = match.Index + charsRemoved;
-                int originalEndIndex = match.Index + charsRemoved + match.Value.Length - 1;
-                line = line.Substring(charsToCut);
-                Part part = new Part(match.Value, originalStartIndex, originalEndIndex);
-                charsRemoved += charsToCut;
-                parts.Add(part);
-            }
-            else
-            {
-                line = "";
-            }
+            int endIndex = match.Index + match.Value.Length - 1;
+            Part part = new Part(match.Value, match.Index, endIndex);
+            parts.Add(part);
+            match = match.NextMatch();
         }
         return parts;
-    }
-
-    public static (int, int) GetStartAndEndIndex(string number, string line)
-    {
-        int length = number.Length;
-
-        Match match = Regex.Match(line, @"\D" + number + @"\D");
-        int startIndex = match.Index + 1;
-        int endIndex = startIndex + length - 1;
-        return (startIndex, endIndex);
     }
 
     public static bool IsSymbol(char c)
@@ -163,6 +143,30 @@ class Symbol
     }
 }
 
+    // public static List<Part> GetPartsFromLine(string line)
+    // {
+    //     List<Part> parts = new List<Part>();
+    //     int charsRemoved = 0;
+    //     while (line.Length > 0)
+    //     {
+    //         Match match = Regex.Match(line, @"\d+");
+    //         if (match.Success) {
+    //             int charsToCut = match.Index + match.Value.Length;
+    //             int originalStartIndex = match.Index + charsRemoved;
+    //             int originalEndIndex = match.Index + charsRemoved + match.Value.Length - 1;
+    //             line = line.Substring(charsToCut);
+    //             Part part = new Part(match.Value, originalStartIndex, originalEndIndex);
+    //             charsRemoved += charsToCut;
+    //             parts.Add(part);
+    //         }
+    //         else
+    //         {
+    //             line = "";
+    //         }
+    //     }
+    //     return parts;
+    // }
+
     // public Line(int rowIndex, string line)
     // {
     //     RowIndex = rowIndex;
@@ -187,4 +191,14 @@ class Symbol
     //         }
     //         symbolIndex++;
     //     }
+    // }
+
+    // public static (int, int) GetStartAndEndIndex(string number, string line)
+    // {
+    //     int length = number.Length;
+
+    //     Match match = Regex.Match(line, @"\D" + number + @"\D");
+    //     int startIndex = match.Index + 1;
+    //     int endIndex = startIndex + length - 1;
+    //     return (startIndex, endIndex);
     // }
