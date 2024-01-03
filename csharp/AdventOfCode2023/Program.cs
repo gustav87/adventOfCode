@@ -4,6 +4,8 @@ using AdventOfCode2023.Day2.Task1;
 using AdventOfCode2023.Day2.Task2;
 using AdventOfCode2023.Day3.Task1;
 using AdventOfCode2023.Day3.Task2;
+using AdventOfCode2023.Day4.Task1;
+using AdventOfCode2023.Day4.Task2;
 
 class Program
 {
@@ -15,5 +17,7 @@ class Program
         // Day2Task2.RunDay2Task2(); // 77021
         // Day3Task1.RunDay3Task1(); // 527144
         // Day3Task2.RunDay3Task2(); // 81463996
+        // Day4Task1.RunDay4Task1(); // 27454
+        Day4Task2.RunDay4Task2();
     }
 }
