@@ -14,6 +14,6 @@ class Program
         // Day2Task1.RunDay2Task1(); // 2285
         // Day2Task2.RunDay2Task2(); // 77021
         // Day3Task1.RunDay3Task1(); // 527144
-        Day3Task2.RunDay3Task2();
+        // Day3Task2.RunDay3Task2(); // 81463996
     }
 }
