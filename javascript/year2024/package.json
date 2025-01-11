@@ -1,0 +1,17 @@
+{
+  "name": "year2033",
+  "main": "index.js",
+  "license": "ISC",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "tsx"
+  },
+  "keywords": [],
+  "author": "",
+  "description": "",
+  "dependencies": {
+    "@types/node": "^22.10.5",
+    "tsx": "^4.19.2"
+  }
+}
