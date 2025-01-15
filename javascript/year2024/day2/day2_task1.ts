@@ -19,7 +19,7 @@ for (const line of contents.split("\n")) {
 const MAXDIFF = 3;
 const MINDIFF = 1;
 
-const isReportWithinBounds = (report) => {
+const isReportWithinBounds = (report: number[]): boolean => {
   let i = 0;
   for (const currLevel of report) {
     if (i === 0) {
@@ -36,8 +36,8 @@ const isReportWithinBounds = (report) => {
   return true;
 }
 
-const isReportAsc = (arr: number[]) => arr.every((curr, i, origArr) => i === 0 || curr > origArr[i - 1]);
-const isReportDesc = (arr: number[]) => arr.every((curr, i, origArr) => i === 0 || curr < origArr[i - 1]);
+const isReportAsc = (arr: number[]): boolean => arr.every((curr, i, origArr) => i === 0 || curr > origArr[i - 1]);
+const isReportDesc = (arr: number[]): boolean => arr.every((curr, i, origArr) => i === 0 || curr < origArr[i - 1]);
 
 for (const report of reports) {
   if (!isReportAsc(report) && !isReportDesc(report)) continue;
@@ -46,4 +46,3 @@ for (const report of reports) {
 }
 
 console.log(safeReports.length);
-
